@@ -3,7 +3,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-uppercase">all post</h1><table class="table">
+                <div class="d-flex justify-content-between">
+                    <h1 class="text-uppercase">all post</h1>
+                    <a class="btn btn-info align-self-center" href="{{route('admin.posts.create')}}"> Crea Nuovo</a>
+                </div>
+
+                <table class="table">
                     <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -20,10 +25,10 @@
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->slug }}</td>
                             <td>{{ $post->author }}</td>
-                            <td>
+                            <td class="d-flex justify-content-around">
                                 <a class="btn btn-secondary" href="{{ route('admin.posts.show', ['post' => $post->id])}}">Details</a>
-                                <a class="btn btn-warning" href="#">Update</a>
-                                <form method="post" action="">
+                                <a class="btn btn-warning" href="{{ route('admin.posts.edit', ['post' => $post->id])}}">Update</a>
+                                <form method="post" action="{{ route('admin.posts.destroy', ['post' => $post->id])}}">
                                     @csrf
                                     @method('DELETE')
                                     <input class="btn btn-danger" type="submit" value="Delete">

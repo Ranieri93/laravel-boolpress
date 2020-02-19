@@ -7,7 +7,7 @@
                 <ul class="list-group">
                     @forelse ($posts as $post)
                         <li class="list-group-item text-center">
-                            <a href="#">
+                            <a href="{{ route('blog.show', ['slug' => $post->slug]) }}">
                                 {{ $post->title }}
                             </a>
                         </li>

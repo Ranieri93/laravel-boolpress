@@ -12,4 +12,9 @@ class PostController extends Controller
         return view('posts', ['posts' => $posts]);
 
     }
+
+    public function show($slug) {
+        $post = Post::where('slug', $slug)->first();
+        return view('singlepost', ['post' => $post]);
+    }
 }

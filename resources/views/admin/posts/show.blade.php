@@ -9,6 +9,7 @@
                         <a class="btn btn-dark" href="{{route('admin.posts.index')}}">Torna indietro</a>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Contenuto: <br> {{$post->content}}</li>
+                            <img src="{{$post->cover_image ? asset('storage/' . $post->cover_image) : asset('storage/uploads/404.png') }}" alt="{{$post->title}}">
                             <li class="list-group-item">Autore: <br> {{$post->author}}</li>
                             <li class="list-group-item">Slug: <br> {{$post->slug}}</li>
                             <li class="list-group-item">Creato il: <br> {{$post->created_at}}</li>

@@ -26,7 +26,7 @@
                     <a class="nav-link" href="#">{{ __('Cosa Facciamo') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ __('Contatti') }}</a>
+                    <a class="nav-link" href="{{route('contatti.show')}}">{{ __('Contattaci') }}</a>
                 </li>
                 @auth
                     <li class="nav-item dropdown">

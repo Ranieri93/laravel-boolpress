@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use illuminate\Support\Str;
+
 
 class PostController extends Controller
 {
@@ -41,6 +43,13 @@ class PostController extends Controller
     {
         $data = $request->all();
         $post = new Post();
+
+        // recupero l'immagine proveniente dal form
+        if (!empty($data['cover_image'])) {
+            $cover_image = $data['cover_image'];
+            $cover_image_path = Storage::put('uploads', $cover_image);
+            $post->cover_image = $cover_image_path;
+        }
         $post->fill($data);
         $post->slug = Str::slug($data['title']);
         $post->save();
@@ -79,6 +88,12 @@ class PostController extends Controller
     public function update(Request $request, Post $post)
     {
         $data = $request->all();
+
+        if (!empty($data['cover_image'])) {
+            $cover_image = $data['cover_image'];
+            $cover_image_path = Storage::put('uploads', $cover_image);
+            $post->cover_image = $cover_image_path;
+        }
         $post->update($data);
         return redirect()->route('admin.posts.index');
     }

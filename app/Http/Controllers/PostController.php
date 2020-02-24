@@ -16,7 +16,12 @@ class PostController extends Controller
 
     public function show($slug) {
         $post = Post::where('slug', $slug)->first();
-        return view('singlepost', ['post' => $post]);
+        if (!empty($post)) {
+            return view('singlepost', ['post' => $post]);
+        } else {
+            return abort(404);
+        }
+
     }
 
     public function postCategoria($slug) {
@@ -27,6 +32,8 @@ class PostController extends Controller
               'category' => $categoria,
               'posts' => $post_categoria
           ]);
+      } else {
+          return abort(404);
       }
 
 

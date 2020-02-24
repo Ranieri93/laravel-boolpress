@@ -12,6 +12,7 @@
                             <img src="{{$post->cover_image ? asset('storage/' . $post->cover_image) : asset('storage/uploads/404.png') }}" alt="{{$post->title}}">
                             <li class="list-group-item">Autore: <br> {{$post->author}}</li>
                             <li class="list-group-item">Slug: <br> {{$post->slug}}</li>
+                            <li class="list-group-item">Categoria: <br> {{$post->category->name}}</li>
                             <li class="list-group-item">Creato il: <br> {{$post->created_at}}</li>
                             <li class="list-group-item">Aggiornato il: <br> {{$post->updated_at}}</li>
                         </ul>

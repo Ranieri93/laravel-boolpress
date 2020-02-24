@@ -4,10 +4,10 @@
     <list default="true" id="7c295318-95eb-4c4b-9619-67b5c5992b22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/filesystems.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/filesystems.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/posts/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/public-navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/public-navbar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,6 +20,9 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="boolPress" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -137,13 +140,14 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\MAMP\htdocs\corso-mamp\LV\boolPress\storage\app\public\uploads" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\MAMP\htdocs\corso-mamp\LV\boolPress\resources\views" />
       <recent name="C:\MAMP\htdocs\corso-mamp\LV\boolPress\app\Http\Controllers\Admin" />
       <recent name="C:\MAMP\htdocs\corso-mamp\LV\boolPress\app\Http\Controllers" />
       <recent name="C:\MAMP\htdocs\corso-mamp\LV\boolPress\resources\views\admin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MAMP\htdocs\corso-mamp\LV\boolPress\storage\app\public\uploads" />
     </key>
   </component>
   <component name="RunManager">
@@ -164,7 +168,9 @@
       <updated>1582033776276</updated>
       <workItem from="1582033784145" duration="14398000" />
       <workItem from="1582119914926" duration="5102000" />
-      <workItem from="1582293313377" duration="11091000" />
+      <workItem from="1582293313377" duration="11121000" />
+      <workItem from="1582549503760" duration="3196000" />
+      <workItem from="1582553856833" duration="4535000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD completate">
       <created>1582124742334</created>
@@ -173,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582124742334</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Aggiunta la possibilità di gestione immagini e form con le mail">
+      <created>1582304522858</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582304522858</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,13 +210,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582037846109" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1582124752475">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1582304543805">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582124752475" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1582293315988">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582304543805" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1582553973850">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582293315988" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582553973850" />
   </component>
 </project>

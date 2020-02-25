@@ -48,6 +48,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // utilizzo la funzione validate:
+        $request->$this->validate([
+            'title' => 'required|max:255',
+            'author' => 'required|max:255',
+            'content' => 'required',
+            'cover_img_file' => 'image'
+        ]);
+
+        //recupero tutti i dati:
         $data = $request->all();
         $post = new Post();
 
@@ -105,6 +114,14 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
+
+        $request->$this->validate([
+            'title' => 'required|max:255',
+            'author' => 'required|max:255',
+            'content' => 'required',
+            'cover_img_file' => 'image'
+        ]);
+
         $data = $request->all();
 
         if (!empty($data['cover_image'])) {

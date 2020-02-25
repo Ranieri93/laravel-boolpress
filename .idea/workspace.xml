@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7c295318-95eb-4c4b-9619-67b5c5992b22" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/posts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +169,9 @@
       <workItem from="1582119914926" duration="5102000" />
       <workItem from="1582293313377" duration="11121000" />
       <workItem from="1582549503760" duration="3196000" />
-      <workItem from="1582553856833" duration="5030000" />
+      <workItem from="1582553856833" duration="5066000" />
+      <workItem from="1582637690164" duration="14000" />
+      <workItem from="1582637737851" duration="5706000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD completate">
       <created>1582124742334</created>
@@ -188,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582558650079</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Aggiunta la relazione OtM.2">
+      <created>1582558907504</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582558907504</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,7 +211,8 @@
     <MESSAGE value="CRUD completate" />
     <MESSAGE value="Aggiunta la possibilità di gestione immagini e form con le mail" />
     <MESSAGE value="Aggiunta la relazione OtM" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta la relazione OtM" />
+    <MESSAGE value="Aggiunta la relazione OtM.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta la relazione OtM.2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="22" key="#Composer" timestamp="1582033939376">
@@ -209,21 +223,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="460" y="173" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582558803735" />
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582558647157">
+    <state x="364" y="98" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1582637698217">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582558647157" />
+    <state x="364" y="98" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582637698217" />
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1582558905286">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582558905286" />
     <state x="517" y="287" key="NewPhpFileDialog" timestamp="1582037846109">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="517" y="287" key="NewPhpFileDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582037846109" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1582304543805">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1582558914677">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582304543805" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1582553973850">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582558914677" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1582637760631">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582553973850" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1582637760631" />
   </component>
 </project>

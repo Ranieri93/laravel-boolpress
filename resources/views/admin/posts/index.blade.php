@@ -16,6 +16,7 @@
                         <th scope="col">Slug</th>
                         <th scope="col">Autore</th>
                         <th scope="col">Categorie</th>
+                        <th scope="col">Tags</th>
                         <th scope="col">Actions</th>
                     </tr>
                     </thead>
@@ -27,6 +28,13 @@
                             <td>{{ $post->slug }}</td>
                             <td>{{ $post->author }}</td>
                             <td>{{ $post->category ? $post->category->name : '-'}}</td>
+                            <td>
+                                @forelse($post->tags as $tag)
+                                    {{$tag->name}} {{$loop->last ? '' : '-'}}
+                                @empty
+                                    -
+                                @endforelse
+                            </td>
                             <td class="d-flex justify-content-around">
                                 <a class="btn btn-secondary" href="{{ route('admin.posts.show', ['post' => $post->id])}}">Details</a>
                                 <a class="btn btn-warning" href="{{ route('admin.posts.edit', ['post' => $post->id])}}">Update</a>

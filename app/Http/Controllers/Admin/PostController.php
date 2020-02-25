@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Category;
+use App\Tag;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Http\Controllers\Controller;
@@ -32,7 +33,11 @@ class PostController extends Controller
     public function create()
     {
         $categories= Category::all();
-        return view('admin.posts.create', ['categories' => $categories]);
+        $tags = Tag::all();
+        return view('admin.posts.create', [
+            'categories' => $categories,
+            'tags' => $tags
+        ]);
     }
 
     /**
@@ -55,6 +60,11 @@ class PostController extends Controller
         $post->fill($data);
         $post->slug = Str::slug($data['title']);
         $post->save();
+
+        if (!empty($data['tag_id'])) {
+            $post->tags()->sync($data['tag_id']);
+        }
+
         return redirect()->route('admin.posts.index');
     }
 
@@ -78,7 +88,12 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $categories = Category::all();
-        return view('admin.posts.edit', ['post' => $post, 'categories' => $categories]);
+        $tags = Tag::all();
+        return view('admin.posts.edit', [
+            'post' => $post,
+            'categories' => $categories,
+            'tags' => $tags
+        ]);
     }
 
     /**
@@ -99,6 +114,11 @@ class PostController extends Controller
         }
 
         $post->update($data);
+
+        if (!empty($data['tag_id'])) {
+            $post->tags()->sync($data['tag_id']);
+        }
+
         return redirect()->route('admin.posts.index');
     }
 
@@ -110,6 +130,15 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        // inserisco il controllo per poter cancellare l'immagine
+        $post_image = $post->cover_image;
+        if (!empty($post_image)) {
+            Storage::delete($post_image);
+        }
+        // controllo se nella collection dei tag c'è qualcosa, e solo in seguito eseguo la delete
+        if ($post->tags->isNotEmpty()) {
+            $post->tags()->sync([]);
+        }
         $post->delete();
         return redirect()->route('admin.posts.index');
     }
